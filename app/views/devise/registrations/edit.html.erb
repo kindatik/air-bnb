@@ -7,11 +7,17 @@
         <%= devise_error_messages! %>
       
         <div class="form-group">
+          
             <%= f.text_field :fullname, autofocus: true, class: "form-control", placeholder: "Nom Complet ( Prenom et Nom )" %>
+            
         </div>
           
          <div class="form-group">
             <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Adresse e-mail" %>
+         </div>
+         
+         <div class="form-group">
+            <%= f.file_field :avatar %>
          </div>
       
         <div class="form-group">
