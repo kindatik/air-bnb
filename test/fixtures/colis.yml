@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  colis_type: MyString
+  weight_colis: 1
+  price_colis: 1
+  summary: MyText
+  address_departume: MyString
+  address_arrival: MyString
+  is_weak: false
+  is_urgent: false
+  user_id: 
+
+two:
+  colis_type: MyString
+  weight_colis: 1
+  price_colis: 1
+  summary: MyText
+  address_departume: MyString
+  address_arrival: MyString
+  is_weak: false
+  is_urgent: false
+  user_id: 
