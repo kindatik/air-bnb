@@ -1,4 +1,4 @@
-class ColiController < ApplicationController
+class ColisController < ApplicationController
    
 before_action :set_coli, only: [:show, :edit, :update]  
 before_action :authenticate_user!, except: [:show]
@@ -27,16 +27,16 @@ before_action :authenticate_user!, except: [:show]
      end 
     
      def update
-         if @coli.update(room_params)
+         if @coli.update(coli_params)
              redirect_to @coli, notice: "Modification enregistrée..."
          else
              render :edit
          end    
      end 
     
-private 
+private
     def set_coli
-         @coli = Coli.find(params[:id])
+         @coli = coli.find(params[:id])
     end     
     
     def coli_params

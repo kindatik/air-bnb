@@ -1,0 +1,84 @@
+<div class= "panel panel-default">
+    <div class= "panel-heading">
+        Envoyer un colis
+    </div>
+    <div class="panel-body">
+        <div class="container">
+            <%= form_for @coli do |f| %>
+                <div class="row">
+                <div class="col-md-4 select">
+                        <div class= "form-group">
+                        <label>Type de colis</label>
+                            <%= f.select :colis_type, [["Lettre","Lettre"],["Petit Paquet","Petit Paquet"],
+                            ["Paquet Moyen","Paquet Moyen"],["Gros Paquet","Gros Paquet"],["Autre Paquet","Autre Paquet"]],
+                            id: "coli_type",
+                             prompt:"A sélectionner...",
+                            class:"form-control" %>
+                        </div>
+                    </div>
+                    
+                   <div class="row">
+                        <div class= "form-group">
+                        <label>             Description du colis      </label>
+                            <%= f.text_area :summary, placeholder: "Décriver votre colis le mieux possible pour faciliter la tâche du transporteur", class: "form-control" %>
+                        </div>
+                    </div>
+                    
+                   <div class="row">
+                        <div class= "form-group">
+                        <label>Pays et ville de départ</label>
+                            <%= f.text_field :address_departume, placeholder: "Quel est le pays et la ville de départ de votre colis?", class: "form-control" %>
+                        </div>
+                    </div>
+                    
+                   <div class="row">
+                        <div class= "form-group">
+                        <label>Pays et ville de Destination</label>
+                            <%= f.text_field :address_arrival, placeholder: "Dans quel pays et ville souhaité vous envoyer votre colis ?", class: "form-control" %>
+                        </div>
+                    </div>
+                    
+                   <div class="row">
+                   <div class="col-md-4">
+                    <div class= "form-group">
+                        <%=f.check_box :is_weak %>Fragile
+                    </div>   
+                   </div>    
+                  </div>
+                  
+                   <div class= "row">
+                      <div class="col-md-4">
+                          <div class= "form-group">
+                              <label>Poids du Colis</label>
+                              <div class= "input-group">
+                                  <%= f.text_field :weight_colis, placeholder: "ex: 9Kg", class:"form-control" %>
+                              </div><div class="input-group-addon">Kg</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                   <div class= "row">
+                      <div class="col-md-4">
+                          <div class= "form-group">
+                              <label>Prix proposer au Transporteur du colis</label>
+                              <div class= "input-group">
+                                  <%= f.text_field :price_colis, placeholder: "ex: 20000FCFA", class:"form-control" %>
+                              </div><div class="input-group-addon">FCFA</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                   <div class="row">
+                    <div class= "form-group">
+                        <%=f.check_box :is_urgent %> Annonce Active
+                    </div>
+                   </div>    
+                  
+                   <div class="actions">
+                      <%= f.submit "Je valide mon annonce", class:"btn btn-primary" %>
+                  </div>
+                 
+            <% end %> 
+        </div>
+    </div>
+</div>
